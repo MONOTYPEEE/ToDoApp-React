@@ -2,6 +2,7 @@
 import { useState } from "react";
 import TodoElem from "./todoelm";
 import {css} from "@emotion/react";
+import MyButton from "./btn";
 
 
 const iptDe = css`
@@ -48,8 +49,8 @@ function Todo(){
   return (
       <div>
         <form onSubmit={addtdl}>
-          <input css={iptDe} value={tdInput} type="text" placeholder="WHATUGONNADO?" onChange={inputChange}/>
-          <button>추가</button>
+          <input css={iptDe} value={tdInput} type="text" placeholder="할 일 추가" onChange={inputChange}/>
+          <MyButton value="Add"/>
         </form>
 
         {tdList.map(function(ele){
