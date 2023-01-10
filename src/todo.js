@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TodoElem from "./todoelm";
 import {css} from "@emotion/react";
 import MyButton from "./btn";
@@ -33,6 +33,7 @@ function Todo(){
   function inputChange(event){
     setTdInput(event.target.value);
   }
+
   function addtdl(event){
     event.preventDefault();
     if(tdInput===""){
@@ -46,7 +47,6 @@ function Todo(){
       },...now]);
     });
     setTdInput("");
-    localStorage.setItem('todoDB',JSON.stringify(tdList));
     // console.log(tdList);
   }
   function itemRemove(event){
@@ -57,6 +57,14 @@ function Todo(){
       }
     }));
   }
+
+  useEffect(function(){
+    setTdList(JSON.parse(localStorage.getItem('todoDB')));
+  },[]);
+
+  useEffect(function(){
+    localStorage.setItem('todoDB',JSON.stringify(tdList));
+  },[tdList]);
 
   return (
       <div css={boxx}>
