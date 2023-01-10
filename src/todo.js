@@ -10,7 +10,10 @@ function Todo(){
   }
   function addtdl(event){
     event.preventDefault();
-    if(tdInput==="") return;
+    if(tdInput===""){
+      return;
+    }
+
     setTdList(function(now){
       return([{
         data: tdInput,
