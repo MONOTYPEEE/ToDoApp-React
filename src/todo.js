@@ -19,6 +19,12 @@ function Todo(){
     <div>
       <input value={tdInput} type="text" placeholder="WHATUGONNADO?" onChange={inputChange}/>
       <button onClick={addtdl}>추가</button>
+      <ul>
+        {tdList.map(function(ele){
+          return(
+            <li>{ele}</li>);
+        })}
+      </ul>
     </div>
   );
 }
