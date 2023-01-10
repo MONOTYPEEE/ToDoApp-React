@@ -4,7 +4,18 @@ import TodoElem from "./todoelm";
 import {css} from "@emotion/react";
 import MyButton from "./btn";
 
-
+const boxx = css`
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 14px #00000033;
+  padding: 16px;
+  border-radius: 10px;
+`
 const iptDe = css`
   background-color: white;
   border: #08080829 1px solid;
@@ -47,7 +58,7 @@ function Todo(){
   }
 
   return (
-      <div>
+      <div css={boxx}>
         <form onSubmit={addtdl}>
           <input css={iptDe} value={tdInput} type="text" placeholder="할 일 추가" onChange={inputChange}/>
           <MyButton value="Add"/>

@@ -3,7 +3,7 @@
 import {css} from "@emotion/react";
 
 const btnbtn = css`
-    padding: 8px 16px;
+    padding: 4px 8px;
     border-radius: 8px;
     background-color: #ff6f61;
     border: none;
