@@ -1,5 +1,18 @@
+/** @jsxImportSource @emotion/react */
 import { useState } from "react";
 import TodoElem from "./todoelm";
+import {css} from "@emotion/react";
+
+
+const iptDe = css`
+  background-color: white;
+  border: #08080829 1px solid;
+  padding: 4px 8px;
+  border-radius: 8px;
+  margin-right: 8px;
+  font-size: 1.25rem;
+  box-sizing: border-box;
+`
 
 function Todo(){
   const [tdInput,setTdInput] = useState("");
@@ -33,17 +46,17 @@ function Todo(){
   }
 
   return (
-    <div>
-      <form onSubmit={addtdl}>
-        <input value={tdInput} type="text" placeholder="WHATUGONNADO?" onChange={inputChange}/>
-        <button>추가</button>
-      </form>
+      <div>
+        <form onSubmit={addtdl}>
+          <input css={iptDe} value={tdInput} type="text" placeholder="WHATUGONNADO?" onChange={inputChange}/>
+          <button>추가</button>
+        </form>
 
-      {tdList.map(function(ele){
-        return(
-          <TodoElem data={ele.data} key={ele.timeKey} gt={ele.timeKey} removeAction={itemRemove}/>);
-      })}
-    </div>
+        {tdList.map(function(ele){
+          return(
+            <TodoElem data={ele.data} key={ele.timeKey} gt={ele.timeKey} removeAction={itemRemove}/>);
+        })}
+      </div>
   );
 }
 
