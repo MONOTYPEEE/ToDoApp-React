@@ -1,11 +1,8 @@
 function TodoElem(props){
-    function delItem(){
-
-    }
-
+    // console.log(props);
     return(
-        <div>
-            <button onClick={delItem}>삭제</button>
+        <div className={props.gt}>
+            <button onClick={props.removeAction}>삭제</button>
             {props.data}
         </div>
     );

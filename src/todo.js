@@ -21,7 +21,15 @@ function Todo(){
       },...now]);
     });
     setTdInput("");
-    console.log(tdList);
+    // console.log(tdList);
+  }
+  function itemRemove(event){
+    // console.log(event.nativeEvent.path[1].className);
+    setTdList(tdList.filter(function(element){
+      if(element.timeKey != event.nativeEvent.path[1].className){
+        return element;
+      }
+    }));
   }
 
   return (
@@ -33,7 +41,7 @@ function Todo(){
 
       {tdList.map(function(ele){
         return(
-          <TodoElem data={ele.data} key={ele.timeKey} />);
+          <TodoElem data={ele.data} key={ele.timeKey} gt={ele.timeKey} removeAction={itemRemove}/>);
       })}
     </div>
   );
