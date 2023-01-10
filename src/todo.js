@@ -46,12 +46,13 @@ function Todo(){
       },...now]);
     });
     setTdInput("");
+    localStorage.setItem('todoDB',JSON.stringify(tdList));
     // console.log(tdList);
   }
   function itemRemove(event){
-    // console.log(event.nativeEvent.path[1].className);
+    // console.log(event.nativeEvent.path);
     setTdList(tdList.filter(function(element){
-      if(element.timeKey != event.nativeEvent.path[1].className){
+      if(element.timeKey != event.nativeEvent.path[1].classList[0]){
         return element;
       }
     }));

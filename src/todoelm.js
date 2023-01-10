@@ -18,7 +18,7 @@ function TodoElem(props){
     // console.log(props);
     return(
         <div css={bx} className={props.gt}>
-            <MyButton onClick={props.removeAction} value="삭제" />
+            <MyButton onc={props.removeAction} value="삭제" />
             {props.data}
         </div>
     );
