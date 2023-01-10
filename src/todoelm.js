@@ -1,8 +1,9 @@
 function TodoElem(props){
+    console.log(props);
     return(
         <div>
             <button>삭제</button>
-            {props.elm}
+            {props.data}
         </div>
     );
 }

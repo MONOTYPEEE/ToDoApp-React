@@ -13,8 +13,8 @@ function Todo(){
     if(tdInput==="") return;
     setTdList(function(now){
       return([{
-        dt: tdInput,
-        tm: Date.now(),
+        data: tdInput,
+        timeKey: Date.now(),
       },...now]);
     });
     setTdInput("");
@@ -28,9 +28,9 @@ function Todo(){
         <button>추가</button>
       </form>
 
-      {tdList.map(function(ele, index){
+      {tdList.map(function(ele){
         return(
-          <TodoElem data={ele.dt} key={ele.tm} />);
+          <TodoElem data={ele.data} key={ele.timeKey} />);
       })}
     </div>
   );
